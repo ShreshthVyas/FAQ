@@ -64,7 +64,7 @@ const Feedback = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="rating" className="block text-sm font-medium text-white">Couldn't find your question?</label>
+                <label htmlFor="rating" className="block text-sm font-medium text-white">Could not find your question?</label>
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-sm font-medium text-white">Write your question here:</label>

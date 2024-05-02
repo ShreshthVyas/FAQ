@@ -70,7 +70,7 @@ export function SheetDemo() {
         <SheetHeader>
           <SheetTitle>We would love your feedback !</SheetTitle>
           <SheetDescription>
-            Could'nt find your question or any other query ?
+            Could not find your question or any other query ?
             Please mention below.
           </SheetDescription>
         </SheetHeader>
@@ -90,7 +90,7 @@ export function SheetDemo() {
           onChange={handleChange}
           className="  mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
         >
-          <option value="Couldn't find your Question !">Couldn't find your Question !</option>
+          <option value="Couldn't find your Question !">Could not find your Question !</option>
           <option value="Feedback / Suggestion">Feedback / Suggestion</option>
           <option value="Further enquiry related any question ?">Further enquiry related any question ?</option>
         </select>
