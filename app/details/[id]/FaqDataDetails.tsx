@@ -1,4 +1,3 @@
-'use client'
 import { useEffect, useState } from 'react';
 import supabase from '@/utils/server';
 
@@ -35,14 +34,21 @@ export default function FaqDataDetails({ id }: { id: number }) {
     return <div>Loading...</div>;
   }
 
+  const remarklines = faqData.Remarks.split(';');
+  
   return (
-    <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md">
+    <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md whitespace-normal">
       <h2 className="text-3xl font-bold mb-4">{faqData.Questions}</h2>
       <p className="text-lg mb-2">Answer - {faqData.Answers}</p>
-      Remarks- {faqData.Remarks}
+      Remarks-
+      {remarklines.map((line :string, index:number) => (
+        <p key={index}>{line}</p>
+      ))}
+      
       {faqData.Links && (
-        <p className="text-blue-500 mb-2">Follow-up - {faqData.Links}</p>
+        <p className="text-blue-500 mb-2">Link - {faqData.Links}</p>
       )}
+      
       {faqData.Followup && (
         <p className="text-green-500 mb-2">Follow-up - {faqData.Followup}</p>
       )}

@@ -36,6 +36,7 @@ export default function FaqHindiDetails({ id }: { id: number }) {
     return <div>Loading...</div>;
   }
   console.log(faqHindi.Answers);
+ 
 
   return (
     <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md">
@@ -45,7 +46,7 @@ export default function FaqHindiDetails({ id }: { id: number }) {
   )}
       Remarks - {faqHindi.Remarks}
       {faqHindi.Links && (
-        <p className="text-green-500 mb-2">Follow-up - {faqHindi.Links}</p>
+        <p className="text-blue-500 mb-2">Links - {faqHindi.Links}</p>
       )}
     </div>
   );

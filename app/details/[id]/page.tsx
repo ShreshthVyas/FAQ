@@ -8,11 +8,14 @@ import FaqHindiDetails from "./FaqHindiDetails";
 
 export default function Details({ params }: { params: { id: number } }) {
     return (   
-      <div className="flex flex-col  mt-20 md:flex-row  ">
-         <div className="md:ml-80 ml-4">
+      <div className="flex flex-col  mt-20 md:flex-row   ">
+         <div className="xl:ml-100 md:ml-80 ml-4 mr-4">
         <FaqDataDetails id={params.id} />
       </div>
-          <FaqHindiDetails id={params.id} />
+      <div className="mr-2 ml-4">
+      <FaqHindiDetails id={params.id} />
+      </div>
+          
       </div> 
   );
 }
