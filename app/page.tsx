@@ -14,6 +14,7 @@ export default function Home() {
   const router  = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [showPopup, setShowPopup] = useState(false);
  
   const handleSearch = async () => {
     try {
@@ -29,6 +30,11 @@ export default function Home() {
       }
 
       setSearchResults(data || []);
+      if (!data || data.length === 0) {
+        setShowPopup(true);
+      } else {
+        setShowPopup(false);
+      }
     } catch (error) {
       if (
         typeof error === "object" &&
@@ -50,6 +56,10 @@ export default function Home() {
     if (event.key === 'Enter') {
       handleSearch();
     }
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -109,7 +119,15 @@ export default function Home() {
   <div>
   <SheetDemo />
   </div>
-  
-</main>
+  {showPopup && (
+        <div className="fixed flex items-center justify-center z-50 rounded-xl">
+        <div className=" flex flex-col items-center bg-blue-500 bg-opacity-500 p-8 rounded-xl shadow-md text-white text-center  ">
+          <p>Can't find what you're looking for? Our resources are constantly growing. </p>
+            <p>Tell us your question through the feedback option and we'll do our best to answer it within 48 hours.</p>
+          <button onClick={handlePopupClose} className=" rounded-2xl mt-4 px-4 py-2 bg-white text-blue-500">Okay</button>
+        </div>
+      </div>
+      )}
+    </main>
   );
 }
