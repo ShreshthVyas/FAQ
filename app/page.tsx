@@ -120,8 +120,8 @@ export default function Home() {
   <SheetDemo />
   </div>
   {showPopup && (
-        <div className="fixed flex items-center justify-center z-50 rounded-xl">
-        <div className=" flex flex-col items-center bg-blue-500 bg-opacity-500 p-8 rounded-xl shadow-md text-white text-center  ">
+        <div className="fixed flex items-center justify-center z-50 rounded-xl px-8">
+        <div className=" flex flex-col items-center bg-blue-500 bg-opacity-500 p-8 rounded-xl shadow-md text-white text-center px-4 ">
           <p>Can not find what you are looking for? Our resources are constantly growing. </p>
             <p>Tell us your question through the feedback option and we will do our best to answer it within 48 hours.</p>
           <button onClick={handlePopupClose} className=" rounded-2xl mt-4 px-4 py-2 bg-white text-blue-500">Okay</button>
