@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
 
 import supabase from "@/utils/server";
-import { useRouter , usePathname } from "next/navigation";
+
 import {  useState } from 'react';
 
 import { SparklesCore } from "@/components/ui/sparkles";
@@ -11,12 +11,11 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 import  { SheetDemo } from "@/components/Sheet";
 
 export default function Home() {
-  const router  = useRouter();
-  const pname = usePathname();
+ 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [showPopup, setShowPopup] = useState(false);
-  console.log(pname);
+  
   const handleSearch = async () => {
     try {
       // Fetch data from 'faqData' table matching the search term in 'Questions' column
@@ -115,7 +114,7 @@ export default function Home() {
     </ul>
   )} */}
   <div className="max-w-5xl mx-auto px-8">
-      <HoverEffect items={searchResults} ogpathname={pname}/>
+      <HoverEffect items={searchResults} />
     </div>
   <div>
   <SheetDemo />

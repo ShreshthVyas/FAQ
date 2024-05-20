@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { usePathname, useRouter ,useSearchParams } from "next/navigation";
+import {  useRouter  } from "next/navigation";
 
 
 export const HoverEffect = ({
@@ -20,9 +20,8 @@ export const HoverEffect = ({
   ogpathname?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const router = useRouter();
-  const pname = usePathname();
-  const searchparam = useSearchParams();
+  
+ 
   return (
     <div
       className={cn(
@@ -33,8 +32,8 @@ export const HoverEffect = ({
       {items.map((item, idx) => (
         <Link
         href={{
-          pathname: `/details/${item.id}`,
-          query: {originalPathname: ogpathname}
+          pathname: `/details/${item.id}`
+          
         }}
             key = {item.id}
              
