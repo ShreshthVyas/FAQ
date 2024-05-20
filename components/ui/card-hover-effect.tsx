@@ -2,10 +2,14 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname, useRouter ,useSearchParams } from "next/navigation";
+
 
 export const HoverEffect = ({
+  
   items,
   className,
+  ogpathname,
 }: {
   items: {
     id:number
@@ -13,9 +17,12 @@ export const HoverEffect = ({
     Answers: string;
   }[];
   className?: string;
+  ogpathname?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+  const router = useRouter();
+  const pname = usePathname();
+  const searchparam = useSearchParams();
   return (
     <div
       className={cn(
@@ -25,8 +32,12 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-            href={`/details/${item.id}`}
+        href={{
+          pathname: `/details/${item.id}`,
+          query: {originalPathname: ogpathname}
+        }}
             key = {item.id}
+             
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
