@@ -142,7 +142,7 @@ export function SheetDemo() {
                   value={formData.option}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                  className="mt-1 block w-full py-1 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
                 >
                   <option value="Could not find question">Question is not available on the website?</option>
                   <option value="Feedback / Suggestion">I have a Feedback/Suggestion</option>

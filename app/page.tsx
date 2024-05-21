@@ -63,9 +63,9 @@ export default function Home() {
   };
 
   return (
-  <main className="flex flex-col items-center justify-center h-screen  bg-black">
+  <main className="flex flex-col items-center justify-center h-screen  bg-black ">
   
-     <div className="h-[20rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+     <div className="h-[20rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md -mt-9">
       <div className="flex items-center">
       <img src="/cb1.png" alt="Icon" className="w-90 h-20 mr-3" />
       
@@ -98,7 +98,7 @@ export default function Home() {
       value={searchTerm}
       onChange={handleInputChange}
       onKeyUp={handleKeyPress}
-      className=" rounded-xl px-20 py-5 mb-4 border border-gray-300  focus:outline-none "
+      className=" rounded-xl py-5 mb-4 border border-gray-300  focus:outline-none -mt-8 "
     />
     <Button onClick={handleSearch} className=" text-white rounded-xl mb-4 px-4 py-2 text-sm">Search</Button>
   </div>

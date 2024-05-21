@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import supabase from '@/utils/server';
+import Link from 'next/link';
 
 export default function FaqDataDetails({ id }: { id: number }) {
   const [faqData, setFaqData] = useState<any>(null);
@@ -39,18 +40,21 @@ export default function FaqDataDetails({ id }: { id: number }) {
   return (
     <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md whitespace-normal">
       <h2 className="text-3xl font-bold mb-4">{faqData.Questions}</h2>
-      <p className="text-lg mb-2">Answer - {faqData.Answers}</p>
-      Remarks-
+      <p className="text-lg mb-2">{faqData.Answers}</p>
+      More Information-
       {remarklines.map((line :string, index:number) => (
         <p key={index}>{line}</p>
       ))}
       
       {faqData.Links && (
-        <p className="text-blue-500 mb-2">Link - {faqData.Links}</p>
+        <p className="text-blue-500 mb-2"><Link href={faqData.Links} target='_blank'> 
+        Click here to know more.
+        </Link>
+        </p>
       )}
       
       {faqData.Followup && (
-        <p className="text-green-500 mb-2">Follow-up - {faqData.Followup}</p>
+        <p className="text-green-500 mb-2">{faqData.Followup}</p>
       )}
     </div>
   );

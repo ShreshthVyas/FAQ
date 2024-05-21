@@ -42,12 +42,13 @@ export default function FaqHindiDetails({ id }: { id: number }) {
     <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md">
       <h2 className="text-3xl font-bold mb-4">{faqHindi.Questions}</h2>
       {faqHindi.Answers && ( // Check if Answers is not null or undefined
-    <p className="text-lg mb-2">Answer - {faqHindi.Answers}</p>
+    <p className="text-lg mb-2">{faqHindi.Answers}</p>
   )}
-      Remarks - {faqHindi.Remarks}
-      {faqHindi.Links && (
+      
+    अधिक जानकारी- {faqHindi.Remarks}
+      {/* {faqHindi.Links && (
         <p className="text-blue-500 mb-2">Links - {faqHindi.Links}</p>
-      )}
+      )} */}
     </div>
   );
 }
