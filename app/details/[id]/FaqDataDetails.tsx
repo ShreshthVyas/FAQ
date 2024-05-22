@@ -54,7 +54,7 @@ export default function FaqDataDetails({ id }: { id: number }) {
       )}
       
       {faqData.Followup && (
-        <p className="text-green-500 mb-2">{faqData.Followup}</p>
+        <p >{faqData.Followup}</p>
       )}
     </div>
   );

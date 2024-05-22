@@ -165,8 +165,8 @@ export function SheetDemo() {
               </div>
 
               {/* Agreement checkbox */}
-              <div className="mb-4">
-                <label htmlFor="agree" className="block text-sm font-medium text-gray-200">
+              <div className="mb-4 ">
+                <label htmlFor="agree" className="ml-2 mr-1 block text-sm font-medium text-gray-200">
                   <input
                     type="checkbox"
                     id="agree"
@@ -176,7 +176,7 @@ export function SheetDemo() {
                     className="mb-auto"
                     required
                   />
-                  By clicking here you agree to share your information with us. Some account and system information may be sent to us. We will use to fix problems and improve our services. We may email you with more information or updates.
+                   By clicking here you agree to share your information with us. Some account and system information may be sent to us. We will use to fix problems and improve our services. We may email you with more information or updates.
                 </label>
               </div>
 
