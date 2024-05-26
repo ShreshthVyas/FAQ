@@ -106,7 +106,7 @@ export function SheetDemo() {
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-8">
               {/* Name input */}
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-100">Name<span className="text-red-500">*</span>:</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-100">Name:</label>
                 <input
                   type="text"
                   id="name"
@@ -121,7 +121,7 @@ export function SheetDemo() {
 
               {/* Email input */}
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-100">Email<span className="text-red-500">*</span>:</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-100">Email:</label>
                 <input
                   type="email"
                   id="email"
@@ -135,7 +135,7 @@ export function SheetDemo() {
               </div>
               {/* Dropdown */}
               <div className="mb-4">
-                <label htmlFor="dropdown" className="block text-sm font-medium text-gray-100">Select an option<span className="text-red-500">*</span>:</label>
+                <label htmlFor="dropdown" className="block text-sm font-medium text-gray-100">Select an option:</label>
                 <select
                   id="dropdown"
                   name="option"
@@ -152,7 +152,7 @@ export function SheetDemo() {
               </div>
               {/* Input paragraph */}
               <div className="mb-4">
-                <label htmlFor="paragraph" className="block text-sm font-medium text-gray-100">Please type in your feedback/question<span className="text-red-500">*</span>:</label>
+                <label htmlFor="paragraph" className="block text-sm font-medium text-gray-100">Please type in your feedback/question:</label>
                 <textarea
                   id="paragraph"
                   name="paragraph"
