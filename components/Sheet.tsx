@@ -166,14 +166,14 @@ export function SheetDemo() {
 
               {/* Agreement checkbox */}
               <div className="mb-4 ">
-                <label htmlFor="agree" className="ml-2 mr-1 block text-sm font-medium text-gray-200">
+                <label htmlFor="agree" className="ml-2 block text-sm font-medium text-gray-200">
                   <input
                     type="checkbox"
                     id="agree"
                     name="agree"
                     checked={formData.agree}
                     onChange={handleCheckboxChange}
-                    className="mb-auto"
+                    className="mb-auto mr-1"
                     required
                   />
                    By clicking here you agree to share your information with us. Some account and system information may be sent to us. We will use to fix problems and improve our services. We may email you with more information or updates.
