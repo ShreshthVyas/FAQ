@@ -47,11 +47,13 @@ export default function FaqDataDetails({ id }: { id: number }) {
       ))}
       
       {faqData.Links && (
-        <p className="text-blue-500 mb-2 "><Link href={faqData.Links} target='_blank'> 
-        Click here to know more.
-        </Link>
-        </p>
-      )}
+  <p className="text-blue-500 mb-2">
+    <Link href={faqData.Links} target="_blank">
+      {faqData.Links.includes('youtube') ? 'Click here to watch a video.' : 'Click here to know more.'}
+    </Link>
+  </p>
+)}
+
       
       {faqData.Followup && (
         <p >{faqData.Followup}</p>
