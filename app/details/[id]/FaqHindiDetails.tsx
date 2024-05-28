@@ -35,8 +35,8 @@ export default function FaqHindiDetails({ id }: { id: number }) {
   if (!faqHindi) {
     return <div>Loading...</div>;
   }
-  console.log(faqHindi.Answers);
- 
+  
+  const remarklines = faqHindi.Remarks.split(';');
 
   return (
     <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md">
@@ -45,7 +45,10 @@ export default function FaqHindiDetails({ id }: { id: number }) {
     <p className="text-lg mb-2">{faqHindi.Answers}</p>
   )}
       
-    अधिक जानकारी- {faqHindi.Remarks}
+      <p className='font-black'>अधिक जानकारी- </p>
+      {remarklines.map((line :string, index:number) => (
+        <p key={index}>{line}</p>
+      ))}
       {/* {faqHindi.Links && (
         <p className="text-blue-500 mb-2">Links - {faqHindi.Links}</p>
       )} */}
