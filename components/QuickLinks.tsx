@@ -8,9 +8,11 @@ const QuickLinks = () => {
     { href: 'https://www.cbsupportindia.in/details/50', label: 'Chromebook Security' },
     { href: 'https://www.cbsupportindia.in/details/55', label: 'Chromebook Setup' },
     { href: 'https://www.cbsupportindia.in/details/29', label: 'Chromebook Perks' },
-    { href: 'https://www.cbsupportindia.in/details/35', label: 'Chromebook Office' },
+    { href: 'https://www.cbsupportindia.in/details/35', label: 'Chromebook Offline' },
     { href: 'https://www.cbsupportindia.in/details/58', label: 'M365 On Chromebook' },
+    { href: 'https://www.cbsupportindia.in/details/60', label: 'AI On Chromebook' },
   ];
+  
 
   return (
     <div className="mt-16 flex flex-wrap justify-center space-x-4">

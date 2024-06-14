@@ -5,6 +5,11 @@ import supabase from '@/utils/server';
 export default function FaqHindiDetails({ id }: { id: number }) {
   const [faqHindi, setFaqHindi] = useState<any>(null);
 
+  const renderBold = (text: string): string => {
+    const boldPattern = /\*\*(.*?)\*\*/g;
+    return text.replace(boldPattern, '<b>$1</b>');
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,9 +51,11 @@ export default function FaqHindiDetails({ id }: { id: number }) {
   )}
       
       <p className='font-black'>अधिक जानकारी- </p>
-      {remarklines.map((line :string, index:number) => (
-        <p key={index}>{line}</p>
+      <div>
+      {remarklines.map((line: string, index: number) => (
+        <p key={index} dangerouslySetInnerHTML={{ __html: line.trim() === "" ? "&nbsp;" : renderBold(line.trim()) }} />
       ))}
+  </div>
       {/* {faqHindi.Links && (
         <p className="text-blue-500 mb-2">Links - {faqHindi.Links}</p>
       )} */}

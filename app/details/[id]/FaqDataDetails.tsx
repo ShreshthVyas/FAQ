@@ -3,7 +3,14 @@ import supabase from '@/utils/server';
 import Link from 'next/link';
 
 export default function FaqDataDetails({ id }: { id: number }) {
+
   const [faqData, setFaqData] = useState<any>(null);
+
+  const renderBold = (text: string): string => {
+    const boldPattern = /\*\*(.*?)\*\*/g;
+    return text.replace(boldPattern, '<b>$1</b>');
+  };
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,17 +44,20 @@ export default function FaqDataDetails({ id }: { id: number }) {
 
   const answerlines = faqData.Answers.split(';');
   const remarklines = faqData.Remarks.split(';');
+  console.log("ans check" + answerlines)
   
   return (
     <div className="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-lg text-white max-w-md whitespace-normal">
       <h2 className="text-3xl font-bold mb-4">{faqData.Questions}</h2>
-      {answerlines.map((line:string , index:number)=>{
-          <p className="text-lg mb-2" key = {index}>{line}</p>
-        })}
+      {/* {answerlines.map((line:string , index:number)=>{
+          <p className="text-lg mb-2" key = {index}>
+            {line.trim() === "" ? <>&nbsp;</> : line}
+          </p>
+        })} */}
       <p className="text-lg mb-2">{faqData.Answers}</p>
       <p className='font-black'>More Information-</p>
-      {remarklines.map((line :string, index:number) => (
-        <p key={index}>{line}</p>
+      {remarklines.map((line: string, index: number) => (
+        <p className="text-lg mb-2" key={index} dangerouslySetInnerHTML={{  __html: line.trim() === "" ? "&nbsp;" : renderBold(line.trim())}} />
       ))}
       
       {faqData.Links && (
