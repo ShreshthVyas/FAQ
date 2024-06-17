@@ -1,6 +1,7 @@
 // FaqHindiDetails.tsx
 import { useEffect, useState } from 'react';
 import supabase from '@/utils/server';
+import Link from 'next/link';
 
 export default function FaqHindiDetails({ id }: { id: number }) {
   const [faqHindi, setFaqHindi] = useState<any>(null);
@@ -56,9 +57,13 @@ export default function FaqHindiDetails({ id }: { id: number }) {
         <p key={index} dangerouslySetInnerHTML={{ __html: line.trim() === "" ? "&nbsp;" : renderBold(line.trim()) }} />
       ))}
   </div>
-      {/* {faqHindi.Links && (
-        <p className="text-blue-500 mb-2">Links - {faqHindi.Links}</p>
-      )} */}
+      {faqHindi.Links && (
+        <p className="text-blue-500 mb-2">
+          <Link href={faqHindi.Links} target="_blank">
+          वीडियो देखने के लिए इस लिंक का उपयोग करिये
+          </Link>
+          </p>
+      )}
     </div>
   );
 }
