@@ -60,7 +60,8 @@ export default function FaqHindiDetails({ id }: { id: number }) {
       {faqHindi.Links && (
         <p className="text-blue-500 mb-2">
           <Link href={faqHindi.Links} target="_blank">
-          वीडियो देखने के लिए इस लिंक का उपयोग करिये
+          {faqHindi.Links.includes('youtube') ? 'वीडियो देखने के लिए इस लिंक का उपयोग करिये' : 'और जानने के लिए इस लिक्न का चुनाव करे'}
+          
           </Link>
           </p>
       )}
